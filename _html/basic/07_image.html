@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 태그</title>
+</head>
+
+<body>
+    <a href="../index.html">상위폴더로 돌아가기</a>
+    <h1>이미지 태그는 inline 속성을 갖는다</h1>
+
+    이미지 태그는 위치, 사이즈, 어떤포멧이냐 세가지를 고려해야함<br>
+    <!-- 이미지의 사이즈 속성 : 숫자=>pixel -->
+    <a href="../basic/01_intro.html">
+        <img src=" ../images/black.jpg" width="80" height="80">
+    </a>
+    <img src=" ../images/black.jpg" width="50%" height="50%">
+    <p>
+        <img
+            src="https://www.google.com/search?q=%EB%B8%94%EB%9E%99%ED%95%91%ED%81%AC&sxsrf=APq-WBsmy18Tg47XDCX_P_QmCdEsaMiDYA:1647325217445&source=lnms&tbm=isch&sa=X&ved=2ahUKEwi-9ajTvMf2AhWP4mEKHXABD5QQ_AUoAXoECAEQAw&biw=1171&bih=1319&dpr=1#imgrc=7R5StnCLPy_xDM&imgdii=0JWDsvAOB8Cl6M">
+    </p>
+
+    <a href="https://namu.wiki/w/%EC%95%84%EC%9D%B4%EC%9C%A0">
+        <p>
+            <img src="../images/iu.jpg">
+            아이유
+        </p>
+    </a>
+    <h4>>대표적으로 jpg, png로 사용된다</h4>
+    <h4>jpg : 손실 압축 포맷 : 이미지의 해상도가 손상되어도 용량을 많이 줄 일 수 있어 가장 많이 사용됨 </h4>
+    <h4>png : 무손실 압출 포맷 : 이미지의 해상도의 손실을 줄이고 투명배경 이미지를 사용할 필요성이 있을때, 이미지의 용량이 크지만 화질이 뛰어남</h4>
+    <h4>이미지 파일들은 파일의 헤더영역에 image/jpeg, image/png 등의 형식을 갖고 있으므로 파일 확장자 명과 관계 없이 헤더 정보로 판단함</h4>
+
+    <!-- 이미지의 리소스가 잘못된 정보값을 갖는 경우 : 엑박이 떴다라고 표현함 엑박이 떳을경우 alt에 문구가 나옴 -->
+    <img src="../images/bts.jpg" alt="bts 였어">
+    <img src="../images/iu.jpg" alt="bts 였어" width="20%" height="20%" title="iu">
+
+</body>
+
+</html>
