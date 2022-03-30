@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIV 태그</title>
+    <style>
+        div {
+            height: 100px;
+        }
+
+        #first {
+            width: 80%;
+            background-color: red;
+        }
+
+        #second {
+            width: 60%;
+            background-color: green;
+        }
+
+        #third {
+            width: 30%;
+            background-color: blue;
+        }
+
+        #outter {
+            width: 80%;
+            height: 300px;
+            background-color: red;
+        }
+
+        #mid {
+            width: 60%;
+            height: 200px;
+            background-color: green;
+        }
+
+        #inner {
+            width: 30%;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="../index.html">상위폴더로 돌아가기</a>
+    <h1>DIV태그는 사용률만 따져보면 가장 많이 사용하는 태그</h1>
+    <p>
+    <h3>영역을 분리하여 담는 컨데이너 역할의 태그
+        block속성을 갖고 있어 컨트롤하기가 힘들지만 영역분리 개념으로 많이 사용
+
+    </h3>
+    </p>
+    <div id="first"></div>
+    <div id="second"></div>
+    </div>
+    <div id="third"></div>
+    <hr>
+    <div id="outter">
+        <div id="mid">
+            <div id="inner"> </div>
+        </div>
+    </div>
+    <hr>
+    <h2>
+        inline속성을 갖는 span태그는 <span id="txt" class=" test">특정 텍스트</span>를 컨트롤하기 위해 영역을 만드는태그
+    </h2>
+     span 큰기능은 없지만 공간을갖기위한 태그
+</body>
+
+</html>
