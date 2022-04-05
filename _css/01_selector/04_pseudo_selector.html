@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>의사 선택자</title>
+    <style>
+        a {
+            background-color: rgb(255, 255, 255);
+            text-decoration: none;
+        }
+
+        a:hover {
+            /* : a태그에 마우스가올라가면 hover  */
+            background-color: aqua;
+
+        }
+
+        a:visited {
+            /* a사용 한 후 / a태그에 기본 배경색이 있어야만 의사선택자 적용 */
+            background-color: red;
+        }
+
+        a:link {
+            /* a에링크가걸려있으면 link */
+            font-size: 1.5em;
+        }
+
+        a:active {
+            /* a에 클릭이되면 ctive*/
+            color: tomato;
+        }
+
+        ul li:first-child {
+            /* first-child는 ul안에 첫번째 li 즉 ul이 가지고있는 li중에 첫번째 */
+            color: rgb(255, 0, 0);
+        }
+
+        ul li:last-child {
+            /* 마지막 ul의 li자식 li만 선택한거지 li가 가지고있는 자식까지는 포함 x */
+            color: rgb(243, 9, 243);
+        }
+
+        ol li:nth-child(3n+2) {
+            /*  odd 2n+1 홀수번째만 선택  even, 2n짝수번째만 선택
+            괄호안의 파라미터에는 수열공식이나 숫자 넣을 수 있다  */
+            color: rgb(255, 0, 242);
+        }
+
+        li::after {
+            /* 태그::안에 컨텐츠에 입력 after는 뒤에 before는 앞에 입력 */
+            content: "번째";
+        }
+
+        ol li::before {
+            content: "태그";
+        }
+
+        li.links a::after {
+            content: "로 이동";
+        }
+
+        .links::before {
+            content: "class";
+        }
+    </style>
+</head>
+
+<body>
+    <a href="index.html">상위폴더로 돌아가기</a>
+    <h1>
+        대상 노드에 이벤트나 효과를 적용하게 된다는 가정하에 만들어지는 선택자
+    </h1>
+    <h3>a:hover MUST come after a:link and a:visited
+        a:active MUST come after a:hover</h3>
+    <h3>
+        <pre>
+            <em>presentation 태그</em>
+        a:hover는 반드시:link 및 a:visited 뒤에 와야 합니다 
+        a:active는 반드시:hover 다음에 와야 합니다.
+        </pre>
+    </h3>
+    <ul>
+        <li class="links">
+            <a href="http://www.naver.com">네이버</a>
+            li소속
+        </li>
+        <li class="links">
+            <a href="http://www.daum.net">다음</a>
+        </li>
+        <li class="links">
+            <a href="http://www.google.com">구글</a>
+        </li>
+        <li class="links">
+            <a href="anchors4">네이트</a>
+            li소속
+        </li>
+    </ul>
+    <h3>a태그는 기본적으로 속성을 가지고있어 스타일링하기 까다롭다 </h3>
+    <h3>작업할때 기본으로(검정으로) 작업을 해두고 스타일링을 함</h3>
+    <ol>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+        </ㅐ>
+</body>
+
+</html>

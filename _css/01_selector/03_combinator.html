@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>결합, 조합 선택자</title>
+    <style>
+        /* 이런 방식으로는 사용하지말것 가독성이 떨어짐 */
+        /* h1, div, li>a{}
+        h1 > a span > .a{} */
+        /*,가 있느냐 없느냐에 따라 완전히 다른 선택자 /,는 앤드조건*/
+        h1, div {
+            border:2px dashed red;/*ashed 점선박스*/
+            margin-bottom: 10px;/*margin-bottom 간격*/
+        }
+        /*자식 선택자 자손선택자 의미만 알면됨 /띄어쓰기는 a 내부의 선택*/
+        div ul{ 
+            border: 1px dotted green;/* dotted 좁은 점선박스*/
+            margin-left:5px ;
+            margin-right:5px ;
+        }
+        div a{
+            color: coral;
+        }
+        div > a{ /* > 자식노드 선택 */
+            background-color: black;
+        }
+
+        ol #first{
+            font-size: 2em;
+        }
+        a.links{ /* a 태그가 클래스=links를 갖고있는거 띄어쓰기 주의 의미가 달라지게 됨 */
+            background-color: aqua;
+        }
+        ol a#first{
+            color: blue;
+        }
+        .links.first{
+            background-color : darkblue;
+        }
+        /* 이건 툴을 이용해서 생성된 코드 일 가능이성이 높음 */
+        /* body > div > ul > li > a{} */
+    </style>
+</head>
+
+<body>
+    <a href="index.html">상위폴더로 돌아가기</a>
+    <h1>
+        선택자를 다수개 조합 하여 선택하는 문법
+    </h1>
+    <div>
+        <a href="">div 태그의 자식 노드</a> <!-- 부모태그  아래있는 태그는 자식노드, a태그 ul태그 -->
+        <ul class="links">
+            <li >
+                <a href="" id="first" class="links first">링크 테스트</a><!-- div 자손, ul 자식노드 -->
+            </li>
+            <li>
+                <a href=""  class="links">링크 테스트</a>
+            </li>
+            <li>
+                <a href="" id="last" class="links">링크 테스트</a>
+            </li>
+        </ul>
+        <a href="">div 태그의 자식 노드</a> <!-- 부모태그  아래있는 태그는 자식노드 -->
+        <ol class="links">
+            <li>
+                <a href="" id="first" class="">링크 테스트</a>
+            </li>
+            <li>
+                <a href="" id="" class="">링크 테스트</a>
+            </li>
+            <li>
+                <a href="" id="last" class="">링크 테스트</a>
+            </li>
+        </ol>
+        <a href="">div 태그의 자식 노드</a> <!-- 부모태그  아래있는 태그는 자식노드 -->
+    </div>
+    <ul class="links">
+            <li>
+                <a href="" id="first" class="">링크 테스트</a>
+            </li>
+            <li>
+                <a href="" id="" class="">링크 테스트</a>
+            </li>
+            <li>
+                <a href="" id="last" class="">링크 테스트</a>
+            </li>
+        </ul>
+        <h3>
+            id는 문서 내에서 유니크하게 사용해야 선택자 사용에 혼란을 줄일 수 있다. 
+        </h3>
+        <h3>
+            결합선택자중에 + , ~ 선택자도 있다
+        </h3>
+</body>
+
+</html>
