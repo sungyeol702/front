@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>경계선</title>
+    <style>
+        /* h1, h3, ol, div, h4, p, ul, li{
+             border: 1px solid red; (short-hand 아래 축약형) 
+            border-width: 1px;
+            border-style: solid;
+            border-color: red;
+
+        }  */
+        h1 {
+            /* 경계선은 border의 기본 3개 속성을 우선 적용한 후 스타일링을 한다 */
+            border-radius: 10px;
+            border: 3px solid red;
+        }
+
+        h3 {
+            border: 3px dashed red;
+
+        }
+
+        ol li {
+            border-width: 2px;
+            border-color: #555;
+            border-bottom-style: groove;
+            /* 스타일 방향성으로 스타일이 가능함 */
+        }
+
+        .list {
+            border-width: 1px 5px 15px 20px;
+            /*방향성 순서대로 적용이가능 함 시계방향 탑,라이트,바텀, 레프트*/
+            border-style: solid;
+            border-color: red green rgb(0, 204, 255) blue;
+        }
+
+        h4 {
+            border: 3px solid red;
+            border-radius: 1px 5px 10px 15px;
+            /* 모서리  왼쪽상단 부터 시계방향 */
+        }
+
+        ol {
+            border-width: 5px 20px;
+            /* 두개일경우 /상하, 좌 우  */
+            border-style: solid double;
+            border-color: red green rgb(174, 0, 255) blue;
+            border-radius: 1px 5px 10px 15px;
+        }
+
+        p {
+            height: 200px;
+            border-width: 3px 10px 9px;
+            /* 3개면 탑을 그리고  좌우 그리고 바텀   */
+            border-style: double solid dotted;
+            border-color: red green rgb(174, 0, 255) blue;
+            border-radius: 10px 30px 10px;
+            /* 모서리는 왼쪽상단 -> 우측상단 왼쪽하단- 오른쪽하단 */
+            /* 탑과 오른쪽은 짝을 이루지 않는다 */
+        }
+
+        .bg {
+            width: 300px;
+            height: 250px;
+            border-radius: 10px;
+            background-image: url(../../_html/images/black.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: 300px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <a href="index.html">상위폴더로 돌아가기</a>
+    <h1>경계선은 html element들간 영역을 구분하는 기준이 됨</h1>
+    <h3>경계선은 box model을 기준으로 거의 모든 태그에 존재함</h3>
+    <ol>
+        <li>경계선 두께 : border-whidth</li>
+        <li>경계선 색상 : border-color</li>
+        <li>경계선 모양 : border-style</li>
+        <li>경계선 모서리 곡률 : border-radius</li>
+    </ol>
+    <div class="container">
+        <h4 class="title">title</h4>
+        <p class="content">content</p>
+        <ul class="list">
+            <li>list 1</li>
+            <li>list 2</li>
+            <li>list 3</li>
+        </ul>
+    </div>
+    <div class="bg"></div>
+</body>
+
+
+</html>
