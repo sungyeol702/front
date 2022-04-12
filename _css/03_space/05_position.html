@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position</title>
+    <style>
+        .fixed{
+            position: fixed;
+            /* top: ;
+            left: ; */
+            right: 1px;
+            bottom: 1%;
+            border: 5px solid red;
+            width: 200px;
+            overflow: auto;
+
+        }
+        nav{
+            border-bottom: 1px solid #999;
+            top: 0px;
+            position: fixed;
+            background-color: white;
+
+        }
+        nav a{
+            margin: 5px 10px;
+        }
+        h1{
+            position: sticky;
+        }
+        .aa{
+            position: relative;
+            top: 30px;
+        }
+    </style>
+</head>
+<body>
+    
+    <nav>
+        <a href="">menu1 </a>
+        <a href="">menu1 </a>
+        <a href="">menu1 </a>
+        <a href="">menu1 </a>
+        <a href="">menu1 </a>
+    </nav>
+    <a href="index.html" class="aa">상위폴더로 돌아가기</a>
+    <h1 id="up">Display 속성을 좀 더 유동적으로 사용할 수 있게 위치값을 부여하는 것</h1>
+    <ul>
+        <li>Position: static=> default, 별도 지정하지 않음</li>
+        <li>Position: fixed => 화면(screen영역) 특정 위치에 고정</li>
+        <li>Position: sticky=> 스크롤에 반응하여 특정위치에 고정</li>
+        <li>Position: relatuve=> 엘리먼트들 끼리 위치값에 영향을 줌(관계가 있다)</li>
+        <li>Position: absolute=> 엘리먼트의 위치가 절대적인 위치로 배정 (기준이 되는 엘리먼트는 relative 속성을 갖는 가장 가까운 조상태그, 만약에 가장 가까운 조상태그가  relative속성을 갖고 있지 않으면? document body(body 태그로 생각해도 무방함)</li>
+    </ul>
+    <div class="fixed">
+        <a href="#up"> 네비바, 위로가기,특정위치로 이동 링크에 많이 사용</a>
+    </div>
+    <style>
+        .outer, .inner{
+            border: 1px solid red;
+        }
+        .outer{
+            position: relative; 
+            left: 50px;
+            top: 100px;
+            width: 500px;
+            height: 300px;
+        }
+        .inner{
+            position:absolute;
+            right: 3px;
+            bottom: 10px;
+            width: 200px;
+            height: 100px;
+        }
+    </style>
+    <div class="outer">
+        outer
+        <div class="inner">
+            inner div
+        </div>
+    </div>
+    <style>
+        .li-1st{ 
+            width: 100px;
+            height: 100px;
+            display: inline;
+            border:  1px dashed red;
+
+        }
+        .li-2nd{
+            position: relative;
+            left: 100px;
+            top: 100px;
+            width: 100px;
+            height: 100px;
+            display: inline;
+            border:  1px solid green;
+
+        }
+    </style>
+    <ol>
+        <li class="li-1st">dummy line</li>
+        <li class="li-2nd">dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li class="s">dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+        <li>dummy line</li>
+    </ol>
+</body>
+</html>
