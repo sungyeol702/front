@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .con{
+            margin: auto;
+            width: 300px;
+            border: 1px solid black;
+            text-align: center;
+            
+        }
+        .top, .bt{
+            width: 80%;
+            height: 50px;
+            border: 3px solid black;
+            margin: 10px auto;
+            font-size: 2em;
+            font-weight: bold;
+            padding-top: 10px;
+        }
+        .mid{
+            width: 80%;
+            height: 300px;
+            border: 3px solid black;
+            position: relative;
+            margin: 10px auto;
+        }
+        .red, .green, .blue{
+           
+            width: 100px;
+            height: 100px;
+            box-shadow: 5px 5px 5px rgb(14, 13, 13);
+            border-radius: 10px;
+        }
+        .red{
+            background-color: red;
+            position:absolute;
+            top: 40px;
+            left: 40px;
+            z-index: 100;
+        }
+        .green{
+            background-color: green;
+            position:absolute;
+            top:90px;
+            left: 90px;
+            z-index: 10;
+        }
+        .blue{
+            background-color: blue;
+            position:absolute;
+            top: 140px;
+            left: 140px;
+            z-index: -1;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="con">
+        <div class="top">텍스트</div>
+        <div class="mid">
+            <div class="red"></div>
+            <div class="green"></div>
+            <div class="blue"></div>
+        </div>
+        <div class="bt">텍스트</div>
+    </div>
+    
+</body>
+</html>
