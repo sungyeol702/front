@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOx model</title>
+    <style>
+        body{
+            text-align: center;
+            
+            
+        }
+        div{
+            
+            border: 1px solid red;
+            padding: 50px; 
+            margin: 20px;
+            /* div커진것이 아니라 안쪽에서 부풀어오른 듯한 모습 ,  padding을  높였다고 컨텐츠 크기에 영향은 안줌 , 컨텐츠의 높이와 실제 물리적높이는 다르다*/
+            /* css에 물리적인높이 height , width 를 지정해주면이 안에 패딩과 보더의값이 들어간 너비라고 보면됨 개념의높이는 태그안에 콘텐츠 크기 */
+            /* 물리적인 높이를 주게되면 패딩,보더,마진 (위아래 왼쪽, 오른쪽)의 크기까지 더해야 태그의 박스크기가 나온다 */
+        }
+        .bt{
+            border: 1px solid blue;
+            padding-top: 10px;
+            padding-right: 50px;
+            padding-bottom: 100px;
+            padding-left: 200px;
+
+            margin-top: 10px;
+            margin-right: 50px;
+            margin-bottom: 100px;
+            margin-left: 200px;
+            
+        }
+        .third{
+            border: 1px solid black;
+            border-style: none;
+            border-radius: 20px;
+            padding: 20px 50px;
+            width: 300px;
+            margin: auto; /* 가운대 정렬 부모가 바디이고 블락속성인태그들일 경우 편법으로 사용함 */
+        }
+        .fourth{
+            outline: 3px solid black;
+            padding: 10px 50px 100px; /* 상,좌우,하단 */
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html">상위폴더로 돌아가기</a>
+    <h1>모든 태그 element는 box model으로 인식되어 경계선을 기준으로 공간이 형성이 되어있다</h1>
+
+    <div>
+        div element의 box model
+    </div>
+    <div class="bt">
+        박스 모델에 의거해 마진, 패딩의 프로퍼티 값 알아보기
+    </div>
+    <div class="third">
+        가장하단 div태그
+        가장하단 div태그
+        가장하단 div태그
+        가장하단 div태그
+        가장하단 div태그
+        가장하단 div태그
+        가장하단 div태그
+    </div>
+    <div class="fourth">
+        가장하단 div태그
+        가장하단 div태그
+        가장하단 div태그
+        가장하단 div태그
+        가장하단 div태그
+        가장하단 div태그
+        가장하단 div태그
+    </div>
+    <div id="box">margin
+        <div>border
+            <div>padding
+                <div>
+                    content
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
