@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트의 숫자</title>
+</head>
+
+<body>
+    <h1>
+        자바스크립트의 숫자는 많은 역할을 하지만 내용이 어렵지는 않음
+    </h1>
+    <p>
+        데이터 타입이 숫자와 숫자일때만 +가 산술연산자 역할을함 하나라도 문자가 있으면
+        연결자 역할을 함 단 왼쪽기준에서 숫자 + 숫자 + 문자 일경우 숫자가 먼저
+        더해지고 그다음 연결됨
+        문자"100" / 문자"100" *, -, 는 문자끼리가능 함 +만 빼고 다됨
+        문자값이 숫자면 js 벨류 값에 접근을해서 연산이 가능함
+        연산된 값은 숫자로 판단함
+    </p>
+    <p>
+        문자"글자"와 숫자를 연산(*, /, -)하면 NaN이 나옴
+    </p>
+    <p>숫자인지 판단하는 메소드 : isNaN()</p>
+    <ul>
+        <li>
+            The Number() method /통합
+        </li>
+        <li>
+            The parseInt() method/ 정수로 바꾸는것<br>
+            정수가아닌 것들은 버린다 . 소수점은 버린다<br>
+            좌측 기준으로 우측 은 버림 '10 문자'
+
+        </li>
+        <li>
+            The parseFloat() method / 실수로 바꾸는거
+        </li>
+    </ul>
+
+    <ol>
+        <li>
+            MAX_VALUE
+        </li>
+        <li>
+            MIN_VALUE
+        </li>
+        <li>
+            POSITIVE_INFINITY
+        </li>
+        <li>
+            NEGATIVE_INFINITY
+        </li>
+    </ol>
+    <h3>
+        <a href="https://www.w3schools.com/js/js_numbers.asp">Javascript Number in W3school</a>
+        <a href="https://www.w3schools.com/js/js_number_methods.asp">Javascript Number_methods in W3school</a>
+    </h3>
+</body>
+<script>
+    let x = "100";
+    let y = "10";
+    let z = x / y;
+    console.log(typeof z, z);
+
+    let myNunber = 32;
+    let r1 = myNunber.toString(8); // 메서드 오버로딩
+    let r2 = myNunber.toString();
+    console.log(typeof myNunber)
+    console.log(typeof r1, r1);
+    console.log(typeof r2, r2);
+    console.log(typeof Number("10 30"), Number("10 30"));
+
+    console.log(typeof parseInt("10 years"), parseInt("10 years"));
+    console.log(typeof parseInt("10 20 30"), parseInt("20 20 30"));
+
+    console.log(typeof pparseFloat("10.33"), parseFloat("10.33"));
+    
+</script>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maht & Random</title>
+</head>
+
+<body>
+    <h1>
+        수학관련 메서드는 주로 사용하는 것만 사용법을 익혀도 괜찮다
+    </h1>
+    <ol>
+        <li>ceil() :(3층의 천장 값)숫자가 가질수 있는 최대 정수 3.14-> 4 -3,14 ->.-3 ,실수의 최대정수 값</ㅣ>
+        <li>floor() :(3층의 바닥 값)숫자가 가질수 있는 최소 정수 3.14-> 3, -3.14 ->-4 ,실수의 최소정수 값</li>
+    </ol>
+    <h1>
+        랜덤 메서드는 난수를 발생시킬 필요가 있는 부분에 주로 사용된다
+    </h1>
+    <ol>
+        <li>
+            Math.round() :반올림, Math.trunc()버림, Math.ceil(), Math.floor(), Math.random(), Math.abs()절대값, Math.min()최소값, Math.max()최대값,
+            Math.pow()제곱,Math.sqrt(x): 루트
+        </li>
+        <li>
+            Math.random() : 0(포함) 부터 1(미포함) 미만 사이의 난수(실수) 1개를 무작위로 리턴함
+        </li>
+    </ol>
+    <script>
+        let pi = 3.14;
+        let pi2 = -3.14;
+
+        console.log(Math.ceil(0.1), Math.ceil(pi2));
+        console.log(Math.floor(pi), Math.floor(pi2));
+
+        //인터넷 페이지 구현할때 자주사용
+        //1, 2, 3, 4, 5, 6, 7, 8, 9, 10 =>10을 리턴하게 만든다
+        function ceilingTo10(page) {
+            return Math.ceil(page / 10) * 10;
+        }
+        console.log(ceilingTo10(1));
+        console.log(ceilingTo10(2));
+        console.log(ceilingTo10(3));
+        console.log(ceilingTo10(4));
+        console.log(ceilingTo10(5));
+        console.log(ceilingTo10(6));
+        console.log(ceilingTo10(7));
+        console.log(ceilingTo10(8));
+        console.log(ceilingTo10(9));
+        console.log(ceilingTo10(10));
+
+        //난수 발생 연습
+        console.log(Math.random()); //0.0~1.0(미만) 사이의 난수
+        //0부터 9까지사이에 정수 1개 추출하기
+        console.log(Math.floor(Math.random() * 10));
+        //1부터 10까지사이에 정수 1개 추출하기
+        //console.log(Math.ceil(Math.random()*10));
+        //0부터 10까지사이에 정수 1개 추출하기
+        console.log(Math.floor(Math.random() * 10) + 1);
+
+        // 50부터 100까지의 정수 1개 추출해보세요
+        console.log(Math.floor(Math.random() * 51) + 50);
+        //70~100까지
+        console.log(Math.floor(Math.random() * 31) + 70);
+        //1~6
+        console.log(Math.floor(Math.random() * 6) + 1);
+
+        //(random()*((목표값-시작값)+1) + (시작값 +))
+
+        //이 JavaScript 함수는 항상 최소값과 최대값(둘 다 포함) 사이의 난수를 반환합니다.
+        function getRndInteger(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        console.log('----------------------------------------')
+        console.log(getRndInteger(1,6))
+
+    </script>
+</body>
+
+</html>
