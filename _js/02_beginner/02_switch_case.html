@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch Case</title>
+</head>
+
+<body>
+    <h1>
+        switch case 절: equal 연산을 기반으로 만들어지는 매핑방식의 조건문
+    </h1>
+    <h3>
+        equal연산 및 반복 탐색연산에서 if else 문보다 속도가 조금 더 빠르다고 함
+    </h3>
+    <script>
+        let week = 'monday'
+        switch (week) {
+            case 'Monday':
+                console.log('대소문자를 구분하기 때문에 monday는 equal 연산에서 false')
+                break; //break; 가 없으면 다음 case로 연산을 진행함
+            case 'Monday':
+                console.log('대소문자를 구분하기 때문에 Monday는 equal 연산에서 true')
+                break;// 즉 break;를 만날때까지 코드가 실행된다는 의미
+
+            default: // fi else if else 절의 else에 해당하는 절
+                console.log('위의 case 조건이 어느 하나도 만족하지 않을때 실행 되는 영역')
+                break; // 마찬가지로 break 필수
+        }
+    </script>
+    <h1>
+        HTML, CSS, javascript 과목에대한 테스트를 치뤘다고 가정합시다
+    </h1>
+    <ul>
+        <li>
+            각 과목의 점수를 랜덤으로 60~100점까지 생성하여 할당한 후
+        </li>
+        <li>
+            과목의 총점과 평균을 출력하시오
+        </li>
+        <li>
+            평균이 90점 이상이면 4, 80점이상이면 b, 70점이상이면 c 60점이상이면 d
+        </li>
+        단 평균에 따른 학점 산출은 switch문을 사용하여 작성할 것
+    </ul>
+    <p id="class">
+
+    </p>
+    <button type="button" id="but">점수 확인</button>
+    <script>
+
+        function score(html, css, js) {
+            let averageScore = (parseInt((html + css + js) / 3));
+            let total = html + css + js
+            console.log(averageScore/10);
+            let grades = "";
+            let key = parseInt(averageScore/10);
+            switch (key) {
+                case  9:
+                    grades = "A" + total+ "평균"+averageScore;;
+                    break;
+                case 8:
+                    grades = "B" + total + "평균"+averageScore;
+                    break;
+                case 7:
+                    grades = "C" + total+ "평균"+averageScore;;
+                    break;
+
+                default:
+                    grades = "D" + total+ "평균"+averageScore;;
+                    break;
+            }
+            document.getElementById('class').innerText = grades
+        }
+
+
+
+        document.getElementById('but').addEventListener('click', function () {
+            //이 JavaScript 함수는 항상 최소값과 최대값(둘 다 포함) 사이의 난수를 반환합니다.
+
+            let html = Math.floor(Math.random() * 41) + 60;
+            let css = Math.floor(Math.random() * 41) + 60;
+            let js = Math.floor(Math.random() * 41) + 60;
+            score(html, css, js)
+        });
+    </script>
+</body>
+
+</html>
