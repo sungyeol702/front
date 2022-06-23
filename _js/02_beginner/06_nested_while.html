@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중첩반복문</title>
+</head>
+<body>
+    <h1>
+        반복문 내에 반복문 : 원리를 이해하면 어렵지 않다
+    </h1>
+    <ul>
+        <li>
+            outer while : 바깥쪽 반복문 -> 기준
+        </li>
+        <li>
+            inner while : 안쪽 반복문 -> 기준이 반복될 때마다 다시 실행
+        </li>
+    </ul>
+    <h3>
+        구구단표를 만들어보자
+    </h3>
+    <button type="button" id="btn">구구단 버튼</button>
+    <p id="r"></p>
+
+    <button type="button" id="gugubtn">구구단 표 버튼</button>
+    <p id="gugu"></p>
+
+<script>
+document.getElementById('btn').addEventListener('click', function () {
+    let p =document.getElementById('r');
+    let dan =2
+    let incre= 1
+    p.innerHTML="";
+    while (dan < 10) {
+        incre = 1;
+        while(incre < 10){
+            p.innerHTML += `${dan} x ${incre} =${dan * incre}<br> `;
+            incre++;
+        }
+        dan++;
+    }
+    
+})
+document.getElementById('gugubtn').addEventListener('click', function () {
+   
+    let incre =1
+    let str="<table>"
+    
+    while (incre < 10) {
+        let line= "<tr>";
+        let dan= 2
+        while(dan < 10){
+            line += `<td>${dan} x ${incre} =${dan * incre} </td>`;
+            dan++;
+        }
+        incre++;
+        str +=line+`</tr>`;
+    }
+    str+='</table>'
+    document.getElementById('gugu').innerHTML = str;
+});
+
+    </script>
+</body>
+</html>
