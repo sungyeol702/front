@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D-day</title>
+</head>
+
+<body>
+    <h2>
+        D-day
+    </h2>
+    <p id="prt"></p>
+    <input type="date" name="" id="user">
+    <button type="button" id="btn">전송</button>
+    <script>
+        let day = ['일', '월', '화', '수', '목', '금', '토']
+        let today1 = new Date();
+        let oneDay = 1000 * 60 * 60 * 24
+
+        const b = new Date('1991-12-16');
+        const t = new Date();
+        let result = t.getTime() - b.getTime();
+        dday = Math.ceil(result / oneDay);
+        console.log(dday)
+        console.log(b)
+        const dDay = new Date('2022-9-25');
+        let value = t.getTime() - dDay.getTime()
+        let goodDay = Math.floor(value / oneDay)
+        console.log(goodDay, '일')
+        console.log('-----------------------------')
+
+
+        let oDay = 1000 * 60 * 60 * 24
+        function datecal(d) {
+            let userDay = d.getTime();
+            let t = new Date();
+            let dDay = Math.floor((t.getTime() - userDay) / oDay)
+
+            return dDay
+
+        }
+
+
+
+
+        document.getElementById('btn').addEventListener('click', function () {
+            let userDay = document.getElementById('user').value
+            let day = new Date(userDay)
+            let userdDay = datecal(day)
+            if (0 < userdDay) {
+                document.getElementById('prt').innerText = `${userDay} 일 로부터 ${userdDay}일 지났습니다.`;
+                
+            } else {
+                if (0 == userdDay) {
+                    document.getElementById('prt').innerText = "당일입니다"
+                } else {
+                    document.getElementById('prt').innerText = `${userDay} 까지 ${Math.abs(userdDay)}일 남았습니다.`
+                }
+            }
+
+
+        });
+
+
+    </script>
+</body>
+
+</html>
