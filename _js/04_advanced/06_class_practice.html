@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클래스 연습</title>
+</head>
+
+<body>
+    <h1>
+        자바스크립트 클래스
+    </h1>
+    <ul>
+        <li>
+            추상화 작업의 대표적인 코드 결과물
+        </li>
+        <li>
+            객체를 생성하기 전 설계도를 만든다는 개념으로 접근
+        </li>
+        <li>
+            개념적인 분류를 통해 필요한 속성(상태:변수)과 기능(메서드)등을 정의함
+        </li>
+        <li>
+            클래스를 통해 생성된 객체는 인스턴스라고 하며 데이터 관리의 기준체 역할을 함
+        </li>
+    </ul>
+    <script>
+        const myAcc = {
+            name: 'choi',
+            balanec: 0,
+            deposit: function (amount) {
+                this.balanec += amount;
+            },
+            withdraw: function (amount) {
+                this.balanec -= amount;
+            },
+            transfer: function (amount, otherAccount) {
+                this.balanec -= amount;
+                otherAccount.balanec += amount;
+
+            }
+        }
+        const yourAcc = {
+            name: 'park',
+            balanec: 100,
+            deposit: function (amount) {
+                this.balanec += amount;
+            },
+            withdraw: function (amount) {
+                this.balanec -= amount;
+            },
+            transfer: function (amount, otherAccount) {
+                this.balanec -= amount;
+                otherAccount.balanec += amount;
+            }
+        }
+        // 내계좌에 입금상황
+        console.log(myAcc.name, ':', myAcc.balanec)
+        myAcc.deposit(100)
+        console.log(myAcc.name, ':', myAcc.balanec)
+        myAcc.transfer(100, yourAcc)
+        console.log(yourAcc.name, ':', yourAcc.balanec)
+        class BankAccount {
+            constructor(name, amount) {
+                this.name = name;
+                this.balanec = amount
+            }
+            deposit(amount) {
+                this.balanec += amount;
+            }
+            withdraw(amount) {
+                this.balanec -= amount;
+            }
+            transfer(amount, account) {
+                this.balanec -= amount;
+                account.balanec += amount;
+            }
+        };
+        let hisAcc = new BankAccount('Lee', 10000)
+        let himrAcc = new BankAccount('kim', 20000)
+        //Lee계좌에 100000원 입금 후 확인
+        hisAcc.deposit(100000)
+        console.log(hisAcc.name, ':', hisAcc.balanec)
+        //kim계좌에 5000d원 출금후 확인
+        hisAcc.withdraw(5000)
+        console.log(himrAcc.name, ':', himrAcc.balanec)
+        //Lee가 kim에게 5000원 송금 후 두계좌상태 확인
+        hisAcc.transfer(5000, yourAcc)
+        console.log(hisAcc.name, ':', hisAcc.balanec)
+        console.log(himrAcc.name, ':', himrAcc.balanec)
+        console.log(himrAcc.name, ':', himrAcc.balanec)
+
+
+        hisAcc.transfer(500, myAcc)
+        //클래스로 객체를만들거나 직접 객체를 만들어도 동일하게 주소값, key :value 값으로 하기때문에
+        //동일하다
+
+    </script>
+</body>
+
+</html>

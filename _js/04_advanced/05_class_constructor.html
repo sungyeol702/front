@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class, constructor</title>
+</head>
+
+<body>
+    <h1>
+        클래스, 객체, 생성자
+    </h1>
+    <script>
+        class car {
+            constructor(name, year) {//자바스크립트에서는 생성자는 1개만 허용
+                this.name = name;
+                this.year = year;
+                this.model = '';
+            };
+        };
+
+        let myCar1 = new car('포르쉐', 2022)
+        let myCar2 = new car('그랜져', 2021)
+        let myCar3 = new car('k3', 2022)
+        myCar3.model = 'XG'
+
+        console.log(myCar1.name, myCar1.year)
+        console.log(myCar2.name, myCar2.year)
+        console.log(myCar3.model)
+
+        /* const hotel = []
+
+        class room {
+            constructor(rm, status) {
+                this.rm = rm
+                this.in = ''
+                this.out = ''
+                this.status = status
+            };
+        };
+        for (let i = 0; i < 5; i++) {
+            let foor = []
+            for (let j = 0; j < 10; j++) {
+                let rooms = new room(`${i + 1}${j == 9 ? '' : '0'}${j+1}`, false)
+                foor.push(rooms)
+            }
+            hotel.push(foor)
+        }
+        console.log(hotel) */
+    </script>
+</body>
+
+</html>
