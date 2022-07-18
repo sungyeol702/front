@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>navigetor</title>
+</head>
+<body>
+    <h1>
+        navigetor 객체 : 사용하는부라우저 객체
+    </h1>
+    <button type="button" id="btn">navigetor 객체 살펴보기</button>
+    <ol id="prt"></ol>
+    <script>
+            document.getElementById('btn').onclick = ()=>{
+            let printElem = document.getElementById('prt')
+         for (const key in window.navigator) {
+             printElem.innerHTML+=`<li>${key} : ${window.navigator[key]}</li>`
+        }
+    }
+    </script>
+</body>
+</body>
+</html>
