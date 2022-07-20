@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문자열로 문서 CRUD해보기</title>
+</head>
+
+<body>
+    <button type="button" id="btn1">Li Tag 한번에 추가하기</button>
+    <button type="button" id="btn2">Li Tag 순차적 추가하기</button>
+    <button type="button" id="btn3">Li Tag 한번에 추가하기</button>
+    <button type="button" id="btn4">Li Tag 순차적 추가하기</button>
+    <ul id="ul"></ul>
+    <hr>
+    <ol id="ol"></ol>
+    <hr>
+    <ul id="ul2"></ul>
+    <hr>
+    <ol id="ol2"></ol>
+    <script>
+        document.getElementById('btn1').addEventListener('click', () => {
+            let lis = '<li><a href="#html">HTML</a></li>'
+            lis += '<li><a href="#css">CSS</a></li>'
+            lis += '<li><a href="#javascript">Javascript</a></li>'
+            lis += '<li><a href="#java">Java</a></li>'
+            document.getElementById('ul').innerHTML = lis
+        })
+        //------------------------------------------------------------
+        const lisName = ['HTML', 'CSS', 'Javascript', 'Java']
+        let i =0
+        document.getElementById('btn2').addEventListener('click', () => {
+            const ol = document.getElementById('ol')
+            console.log(i)
+            if(i< lisName.length ){
+                let lis =  `<li><a href="#${lisName[i].toLocaleLowerCase()}">${lisName[i]}L</a></li>`;
+                ol.innerHTML+=lis;
+                i++;
+            };
+        });
+  //------------------------------------------------------------
+        document.getElementById('btn3').addEventListener('click',()=>{
+            
+           lisName.forEach((elem)=>{
+               let liTag= document.createElement('li')// <li>
+               let aTag= document.createElement('a')//<a>
+                aTag.setAttribute('href', `#${elem.toLocaleLowerCase()}`)//href="#~"
+                aTag.innerText=elem //<a>Text <a>
+                    liTag.appendChild(aTag)
+                    document.getElementById('ul2').appendChild(liTag)
+           }) ;
+        });
+        //btn4를 클릭하면 순차적으로 리스트 추가하기 by DOM Node Creation
+        let index = 0
+        document.getElementById('btn4').addEventListener('click',()=>{
+            let ol = document.getElementById('ol2')
+            if(index <lisName.length){
+                let liTag = document.createElement('li')
+                let aTag = document.createElement('a')
+                aTag.setAttribute('href',`#${lisName[index].toLocaleLowerCase}`)
+                aTag.innerText = lisName[index]
+                liTag.appendChild(aTag)
+                ol.appendChild(liTag)
+                index++
+            }
+        });
+    </script>
+</body>
+
+</html>
