@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+
+</head>
+
+<body>
+    <div class="containar">
+        <div class="header">
+            <img src="./img/안태건5007.JPG" alt="" width="50"><span class="name"> 구남친</span>
+        </div>
+        <div class="content">
+            <div class="u"> 잘 지내?</div>
+            <div class="u">자니?</div>
+        </div>
+        <div class="footer">
+        <textarea id="chat" placeholder="대화내용이 들어갑니다"></textarea><button type="button" id="btn">전송</button>
+        </div>
+        
+    </div>
+    <script src="../../resources/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+            document.getElementById('btn').addEventListener('click', () => {
+                const chat = document.getElementById('chat').value;
+                if (chat != "") {
+                    let htmlText = $("<div></div>").addClass("myText").text(chat);
+                    $('.content').append(htmlText)
+                    $('#chat').val("");
+                    $('#chat').focus();
+                }
+
+            })
+        });
+    </script>
+
+</body>
+
+</html>
